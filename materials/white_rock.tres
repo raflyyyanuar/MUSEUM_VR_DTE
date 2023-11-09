@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bj3vf3a8q72ch"]
+
+[ext_resource type="Texture2D" uid="uid://wujhay66c4es" path="res://blend/Museums/textures/Rock 23/Rock023_4K-PNG_Color.png" id="1_6m2ks"]
+[ext_resource type="Texture2D" uid="uid://cr67ybxpiaw6o" path="res://blend/Museums/textures/Rock 23/Rock_ARM.png" id="2_668an"]
+[ext_resource type="Texture2D" uid="uid://xwyvr0n1k3ut" path="res://blend/Museums/textures/Rock 23/Rock023_4K-PNG_NormalGL.png" id="3_2oaon"]
+
+[resource]
+albedo_texture = ExtResource("1_6m2ks")
+metallic = 1.0
+metallic_texture = ExtResource("2_668an")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_668an")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_2oaon")
+ao_enabled = true
+ao_texture = ExtResource("2_668an")

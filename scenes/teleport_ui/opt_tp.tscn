@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcei8cb8ffux7"]
+
+[ext_resource type="Script" path="res://scenes/teleport_ui/opt_tp.gd" id="1_1h0oq"]
+
+[node name="OptTP" type="HBoxContainer"]
+script = ExtResource("1_1h0oq")
+
+[node name="Name" type="Label" parent="."]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Dummy"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "Teleport here"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

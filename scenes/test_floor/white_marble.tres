@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dfy3x4sg7cgie"]
+
+[ext_resource type="Texture2D" uid="uid://dr3pb1tdvwrse" path="res://blend/Museums/textures/Marble021_2K-PNG_Color.png" id="1_pqb60"]
+[ext_resource type="Texture2D" uid="uid://ce54bktfwjyne" path="res://blend/Museums/textures/Marble021_2K-PNG_NormalGL.png" id="2_oqlqu"]
+[ext_resource type="Texture2D" uid="uid://b1hxss2e1pqx6" path="res://blend/Museums/textures/Marble021_2K-PNG_Roughness.png" id="3_3gjbs"]
+
+[resource]
+albedo_texture = ExtResource("1_pqb60")
+roughness_texture = ExtResource("3_3gjbs")
+normal_enabled = true
+normal_texture = ExtResource("2_oqlqu")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv2j3w3u3ww8x"]
+
+[ext_resource type="VideoStream" path="res://videos/digital_lines.ogv" id="1_ljgim"]
+[ext_resource type="Script" path="res://video_player.gd" id="2_e612l"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_ljgim")
+autoplay = true
+script = ExtResource("2_e612l")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

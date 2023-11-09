@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://dgcwoeo7uqb4a"]
+
+[ext_resource type="Script" path="res://scenes/tutorial_bot/tutorial_bot.gd" id="1_rd0jp"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_0ovd4"]
+[ext_resource type="PackedScene" uid="uid://4tv8331a885p" path="res://scenes/tutorial_bot/trigger_dialogue_ui.tscn" id="3_b7xk1"]
+[ext_resource type="FontFile" uid="uid://bphra76ykf35l" path="res://fonts/sansation/Sansation_Regular.ttf" id="4_3uvdy"]
+[ext_resource type="Shader" path="res://scenes/futuristic_museum/circle_animation.gdshader" id="6_k4xng"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_drn57"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fi6rc"]
+albedo_color = Color(1, 0.341176, 0.654902, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pa6g0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bim0i"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awirf"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avilv"]
+size = Vector3(1.5, 0.4, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_b0c47"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5l8j"]
+render_priority = 0
+shader = ExtResource("6_k4xng")
+shader_parameter/color = Color(0.898039, 0, 1, 1)
+shader_parameter/density = 0.41
+shader_parameter/radial_res = 4.0
+shader_parameter/angular_res = 2.0
+shader_parameter/line_space = 0.0
+shader_parameter/revolutions = 1.845
+shader_parameter/emission = 20.0
+
+[node name="TutorialBot" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_rd0jp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_drn57")
+surface_material_override/0 = SubResource("StandardMaterial3D_fi6rc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0.548, 0.535741)
+mesh = SubResource("SphereMesh_pa6g0")
+surface_material_override/0 = SubResource("StandardMaterial3D_bim0i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.548, 0.584871)
+mesh = SubResource("SphereMesh_pa6g0")
+surface_material_override/0 = SubResource("StandardMaterial3D_awirf")
+
+[node name="Prompt" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160517, 0.182705, 0.638151)
+
+[node name="Viewport2Din3D" parent="Prompt" instance=ExtResource("2_0ovd4")]
+screen_size = Vector2(0.2, 0.2)
+scene = ExtResource("3_b7xk1")
+viewport_size = Vector2(71, 71)
+unshaded = true
+
+[node name="Label3D" type="Label3D" parent="Prompt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.116014, 0, 0)
+pixel_size = 0.001
+text = "Talk"
+font = ExtResource("4_3uvdy")
+font_size = 144
+outline_size = 24
+horizontal_alignment = 0
+
+[node name="TriggerArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 524288
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.839388, 1.63233)
+shape = SubResource("BoxShape3D_avilv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TriggerArea"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.953112, 1.75332)
+mesh = SubResource("QuadMesh_b0c47")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_a5l8j")
+
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_exited" from="TriggerArea" to="." method="_on_trigger_area_body_exited"]

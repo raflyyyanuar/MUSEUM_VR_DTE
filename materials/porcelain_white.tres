@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bxxgrin4ajon4"]
+
+[ext_resource type="Texture2D" uid="uid://br452ka7y1hv3" path="res://textures/Porcelain/Porcelain001_2K-PNG_Color.png" id="1_3p28i"]
+[ext_resource type="Texture2D" uid="uid://buagwnaij2gh0" path="res://textures/Porcelain/Porcelain001_2K-PNG_NormalGL.png" id="2_nqj4n"]
+
+[resource]
+albedo_texture = ExtResource("1_3p28i")
+normal_enabled = true
+normal_texture = ExtResource("2_nqj4n")
+uv1_scale = Vector3(0.002, 0.002, 0.002)
+uv1_triplanar = true

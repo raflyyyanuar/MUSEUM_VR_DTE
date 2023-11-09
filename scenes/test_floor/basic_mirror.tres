@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dlj83w7cm75mg"]
+
+[resource]
+transparency = 1
+metallic = 1.0
+roughness = 0.0

@@ -1,0 +1,24 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dsk26nfsv6sjq"]
+
+[ext_resource type="Texture2D" uid="uid://bcv708c3do7wf" path="res://hdri futuristic city.png" id="1_fmj44"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4wjru"]
+panorama = ExtResource("1_fmj44")
+
+[sub_resource type="Sky" id="Sky_co5jj"]
+sky_material = SubResource("PanoramaSkyMaterial_4wjru")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_co5jj")
+sky_rotation = Vector3(0, -1.5708, 0)
+tonemap_mode = 1
+ssr_enabled = true
+ssr_fade_out = 0.1
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.001
+volumetric_fog_albedo = Color(0.568627, 1, 1, 1)

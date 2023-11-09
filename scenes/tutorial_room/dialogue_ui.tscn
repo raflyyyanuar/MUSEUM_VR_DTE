@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgewkogqukh4g"]
+
+[ext_resource type="FontFile" uid="uid://bphra76ykf35l" path="res://fonts/sansation/Sansation_Regular.ttf" id="1_t2tbm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1fxh"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[sub_resource type="LabelSettings" id="LabelSettings_72rc7"]
+font = ExtResource("1_t2tbm")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwywk"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[node name="DialogueUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 1510.0
+offset_bottom = 328.0
+pivot_offset = Vector2(755, 164)
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1fxh")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -69.5
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "The quick brown"
+label_settings = SubResource("LabelSettings_72rc7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -71.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_t2tbm")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_vwywk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vwywk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vwywk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vwywk")
+text = "A"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

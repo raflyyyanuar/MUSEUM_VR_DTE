@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://baon5xlm6tuet"]
+
+[ext_resource type="Shader" path="res://scenes/futuristic_museum/circle_animation.gdshader" id="1_8l3rf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8l3rf")
+shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/density = 0.41
+shader_parameter/radial_res = 2.0
+shader_parameter/angular_res = 4.0
+shader_parameter/line_space = 0.7
+shader_parameter/revolutions = 1.845
+shader_parameter/emission = 20.0

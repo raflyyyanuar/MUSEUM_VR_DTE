@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://fiyjirja8mqc"]
+
+[ext_resource type="Texture2D" uid="uid://bma335ju0w6gi" path="res://textures/White Tile/Tiles107_2K-PNG_Color.png" id="1_mg6hk"]
+[ext_resource type="Texture2D" uid="uid://ciyn6jcjdql7p" path="res://textures/White Tile/Tiles107_2K-PNG_AmbientOcclusion.png" id="2_cdjvo"]
+[ext_resource type="Texture2D" uid="uid://cqa2dmekqyxj" path="res://textures/White Tile/Tiles107_2K-PNG_NormalGL.png" id="3_o5ybb"]
+[ext_resource type="Texture2D" uid="uid://tukj82ns6seu" path="res://textures/White Tile/Tiles107_2K-PNG_Roughness.png" id="4_su2mt"]
+
+[resource]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_mg6hk")
+roughness_texture = ExtResource("4_su2mt")
+normal_enabled = true
+normal_texture = ExtResource("3_o5ybb")
+ao_enabled = true
+ao_texture = ExtResource("2_cdjvo")
+uv1_scale = Vector3(0.6, 0.6, 0.6)
+uv1_offset = Vector3(0, 0.01, 0)

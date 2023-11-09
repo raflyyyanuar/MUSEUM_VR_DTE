@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcas3j1t7qnn8"]
+
+[ext_resource type="PackedScene" uid="uid://b555cuwgu6gm3" path="res://blend/Museums/glass_cabinet.blend" id="1_d0vt3"]
+[ext_resource type="Material" uid="uid://baon5xlm6tuet" path="res://materials/circle_animation.tres" id="2_l5nj8"]
+[ext_resource type="Texture2D" uid="uid://bjrlhfac4hw7b" path="res://textures/Scifi 1/TCom_Scifi_Pattern2_1K_normal.png" id="3_mpwqk"]
+[ext_resource type="Material" uid="uid://bndnixmxjfsos" path="res://materials/porcelain.tres" id="4_m8ik8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qin8d"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlaer"]
+albedo_color = Color(0.470588, 0.470588, 0.470588, 1)
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("3_mpwqk")
+uv1_scale = Vector3(7.275, 7.275, 7.275)
+uv1_offset = Vector3(0.36, 0.02, 0)
+
+[node name="GlassCabinet" type="Node3D"]
+
+[node name="glass_cabinet" parent="." instance=ExtResource("1_d0vt3")]
+
+[node name="Plane" parent="glass_cabinet" index="0"]
+transform = Transform3D(-0.114866, 0, 0.993381, 0, 1, 0, -0.993381, 0, -0.114866, -5.89303, 1.01535, -1.75331)
+surface_material_override/0 = ExtResource("2_l5nj8")
+
+[node name="Plane_001" parent="glass_cabinet" index="1"]
+transform = Transform3D(0.905141, 0, -0.425112, 0, 1, 0, 0.425112, 0, 0.905141, -2.94357, 1.01535, -2.14959)
+surface_material_override/0 = ExtResource("2_l5nj8")
+
+[node name="Plane_002" parent="glass_cabinet" index="2"]
+surface_material_override/0 = ExtResource("2_l5nj8")
+
+[node name="Plane_003" parent="glass_cabinet" index="3"]
+surface_material_override/0 = ExtResource("2_l5nj8")
+
+[node name="Plane_004" parent="glass_cabinet" index="4"]
+surface_material_override/0 = ExtResource("2_l5nj8")
+
+[node name="Cabinet" parent="glass_cabinet" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qin8d")
+surface_material_override/1 = SubResource("StandardMaterial3D_nlaer")
+
+[node name="Cabinet_001" parent="glass_cabinet/Cabinet" index="0"]
+surface_material_override/0 = ExtResource("4_m8ik8")
+
+[editable path="glass_cabinet"]

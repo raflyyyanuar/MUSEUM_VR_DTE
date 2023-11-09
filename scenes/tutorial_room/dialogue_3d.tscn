@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjhysgnkt106u"]
+
+[ext_resource type="Script" path="res://scenes/tutorial_room/dialogue_3d.gd" id="1_l3fkc"]
+[ext_resource type="FontFile" uid="uid://bphra76ykf35l" path="res://fonts/sansation/Sansation_Regular.ttf" id="2_8luw7"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_2m0nq"]
+[ext_resource type="PackedScene" uid="uid://dgewkogqukh4g" path="res://scenes/tutorial_room/dialogue_ui.tscn" id="4_1pigd"]
+
+[node name="Dialogue3D" type="Node3D"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 2, 0)
+script = ExtResource("1_l3fkc")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.44089e-16, 0, 0.036845)
+pixel_size = 0.001
+modulate = Color(0, 0, 0, 1)
+text = "Mario is first, then Wario, then Waluigi, then Daisy, then you!q You are the superstar!"
+font = ExtResource("2_8luw7")
+font_size = 128
+autowrap_mode = 2
+width = 2800.0
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("3_2m0nq")]
+screen_size = Vector2(3.02, 0.656)
+scene = ExtResource("4_1pigd")
+viewport_size = Vector2(1510, 328)
+unshaded = true
+
+[node name="TextSpeedTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="TextSpeedTimer" to="." method="_on_text_speed_timer_timeout"]

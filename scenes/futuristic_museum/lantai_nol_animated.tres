@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://hccdqn6pllan"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_v4mcr"]
+viewport_path = NodePath("FUTURISTIC/Sphere/SubViewport")
+
+[resource]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_v4mcr")
+emission_energy_multiplier = 40.25

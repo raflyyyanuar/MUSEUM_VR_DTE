@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bl2jbgmjvyi2e"]
+
+[ext_resource type="Shader" path="res://scenes/test_floor/realistic_water.gdshader" id="1_i0vxh"]
+[ext_resource type="Texture2D" uid="uid://dfxvpaswc2phq" path="res://shaders/realistic water/Water_N_A.png" id="2_pfriv"]
+[ext_resource type="Texture2D" uid="uid://ckfflpb56qor5" path="res://shaders/realistic water/Water_N_B.png" id="3_mqc5h"]
+[ext_resource type="Texture2D" uid="uid://bcqk62krx3471" path="res://shaders/realistic water/Water_UV.png" id="4_q3kv0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_i0vxh")
+shader_parameter/wave_speed = 0.5
+shader_parameter/wave_a = Vector4(1, 1, 0.35, 7.675)
+shader_parameter/wave_b = Vector4(1, 0.6, 0.3, 1.55)
+shader_parameter/wave_c = Vector4(1, 1.3, 0.25, 0.9)
+shader_parameter/sampler_scale = Vector2(0.25, 0.25)
+shader_parameter/sampler_direction = Vector2(0.05, 0.04)
+shader_parameter/uv_sampler_scale = Vector2(0.25, 0.25)
+shader_parameter/uv_sampler_strength = 0.04
+shader_parameter/foam_level = 0.5
+shader_parameter/refraction = 0.075
+shader_parameter/color_deep = Vector4(1.46, 2.01, 3.627, 0)
+shader_parameter/color_shallow = Vector4(2, 5, 11, 0)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/projector = null
+shader_parameter/uv_sampler = ExtResource("4_q3kv0")
+shader_parameter/normalmap_a_sampler = ExtResource("2_pfriv")
+shader_parameter/normalmap_b_sampler = ExtResource("3_mqc5h")
